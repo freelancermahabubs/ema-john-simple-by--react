@@ -59,8 +59,8 @@ setCart(savedCart)
   }
 
   return (
-    <div className='shop-container'>
-      <div className="products-container">
+    <div className="shop-container">
+      <div className="product-container">
         {
           products.map(product => <Product 
             key = {product.id}
@@ -69,7 +69,7 @@ setCart(savedCart)
             />)
         }
       </div>
-      <div className="cart-container">
+      <div className="col-span-1">
         <Cart cart={cart}/>
       </div>
     </div>
