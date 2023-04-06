@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
 
 const Orders = () => {
@@ -12,6 +14,11 @@ const handleRemoveFromCart = (id) =>{
 const remaining = cart.filter(product => product.id !== id);
 setCart(remaining);
 removeFromDb(id)
+};
+
+const handleClearCart = () =>{
+  setCart([]);
+  deleteShoppingCart();
 }
 
   return (
@@ -25,7 +32,16 @@ removeFromDb(id)
      }
      </div>
       <div className='col-span-1 mx-auto pl-14 my-12 rounded'>
-      <Cart cart = {cart} />
+      <Cart handleClearCart = {handleClearCart} 
+      cart = {cart} >
+      <div className='pl-2'>
+   <Link to="/checkout">
+        <button className='bg-yellow-300 flex justify-between  text-black p-2 rounded-md items-center'>Proceed Checkout
+        <FontAwesomeIcon className='pl-2 py-2' icon={faLongArrowAltRight}/>
+        </button>
+        </Link>
+   </div>
+      </Cart>
     </div>
     </div>
   );

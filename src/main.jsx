@@ -10,6 +10,7 @@ import Home from './components/LayOut/Home';
 import Shop from './components/Shop/Shop';
 import Orders from './components/Orders/Orders';
 import cartProductsLoader from './loaders/cartProductsLoader';
+import CheckOut from './components/CheckOut/CheckOut';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
     children: [{
       path: '/',
       element: <Shop/>,
+    },
+    {
+      path: 'checkout',
+      element: <CheckOut/>
     },
     {
       path: 'order',
