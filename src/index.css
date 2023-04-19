@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,700&display=swap");
+:root {
+  font-family: "Lato, sans-serif";
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.shop-container{
-  @apply grid lg:grid-cols-4
+.shop-container {
+  @apply grid lg:grid-cols-4;
 }
-.product-container{
-  @apply grid col-span-3 gap-4 my-4 px-5 mx-auto lg:grid-cols-3
+.product-container {
+  @apply grid col-span-3 gap-4 my-4 px-5 mx-auto lg:grid-cols-3;
 }
