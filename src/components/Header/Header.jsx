@@ -23,7 +23,7 @@ const Header = () => {
         <Link to="/singup">Sing Up</Link>
         {user && (
           <span className="text-white pl-2">
-            {user.email}{" "}
+            {user.email}
             <button
               className="bg-red-600 rounded p-2 ml-2"
               onClick={handleLogOut}
